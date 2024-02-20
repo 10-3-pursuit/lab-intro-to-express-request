@@ -119,4 +119,4 @@ console.log(pokemon[0])
 
 - Push to your Github
 - Create a pull request
-- Include this bonus frontend link with your backend link when you submit on canvas.
+- Include this bonus frontend pull request link with your backend pull request link when you submit on canvas.
