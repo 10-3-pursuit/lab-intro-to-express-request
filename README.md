@@ -1,4 +1,4 @@
-# 99 Little Bugs In the Code & Poke-Express
+# Poke-Express
 
 Here, we will build 3 small projects in one to keep learning express.
 
@@ -47,8 +47,8 @@ console.log(pokemon[0])
 
 `node app.js` - to confirm you see an object with Bulbasaur's info.
 
-- make a route `/pokemon` that will show a list of all the pokemon
-- make a route `/pokemon/:indexOfArray` that returns 1 pokemon at that array position
+- make a route `/pokemon` that will show a list of all the pokemon. Remember to use `res.json` and return an object with the key of `pokemon` and the value of the pokemon array.
+- make a route `/pokemon/:indexOfArray` that returns 1 pokemon at that array position. Remember to use `res.json` and return an object with a key of `pokemon` and a value of the one pokemon object.
   - if the array position is invalid or there is no pokemon at that position, instead send `sorry, no pokemon found at /pokemon[indexOfArray]` - where `[indexOfArray]` is the value from the URL that the user has entered
 - make a route /pokemon/search - where a user can add a query parameter
   such as http://localhost:8888/pokemon/search?name=oddish
@@ -97,18 +97,13 @@ console.log(pokemon[0])
 
   ```
 
+  Remember to use `req.query` to grab the query from the url.
+
 ## Bonus
 
-- Instead of just sending JSON, create new routes at `/pokemon-pretty/` send some HTML
-- for all the pokemon, send an unordered list of anchor tags that link to the array position of the pokemon
-- in each individual view `/pokemon-pretty/:indexOfArray` of a pokemon, instead of JSON, display the name, image and any other info
+Fork & Clone the [Lab Intro to Express Request Frontend](https://github.com/10-3-pursuit/lab-intro-to-express-request-frontend).
 
-HRRMMM, adding all this HTML as a string inside the routes is getting unweildly... is there a better way?
+In your `App.jsx`...After you have set up your React environment,
 
-## Bonus Bonus
-
-- Add search ability for other keys in the pokemon data.
-
-- Use `<style></style>` and put some CSS in there to style the page
-
-- Use create-react-app and figure out how to connect it to this backend (we'll teach you later on in the course how to do this)
+- use `fetch` to call all of the pokemon from your backend.
+- display the information of your choice from each pokemon object. Include each image.
