@@ -26,50 +26,6 @@ PORT=8888
 - When finished, commit and push your work.
 - Make a pull request on GitHub.
 
-## New Project Name Generator
-
-Let's start with a simple activity.
-Make a route that takes 3 parameters in the URL
-
-- verb
-- adjective
-- noun
-
-so that if the url is
-
-http://localhost:8888/jumping/joyous/jellybean
-
-The response will be
-
-```
-Congratulations on starting a new project called jumping-joyous-jellybean!
-```
-
-## 99 Little Bugs In the Code
-
-```
-99 little bugs in the code
-99 little bugs
-Pull one down
-Patch it around
-101 bugs in the code
-```
-
-### Requirements
-
-- On the home page (`get "/bugs"`), users should see:
-  - "99 little bugs in the code"
-  - a link that says "pull one down, patch it around"
-  - this should link to `/bugs/101`, where the number represents the number of bugs remaining to fix
-- When a number is given in the url (`get "/bugs/:numberOfBugs"`), users should see:
-  - The number of bugs left in the code (i.e. `101 little bugs in the code`)
-  - a link to "pull one down, patch it around", where the href is number of bugs in the parameter plus 2
-- If there over 200 bugs left, do not show a link to "pull one down", rather, add a link to start over, which directs the user back to the home page
-
-#### Hints
-
-- You should use an `anchor` tag with an `href` to link to the next 'page'
-
 ## Poke-Express
 
 In The Darkest Timeline: The [Pokeapi](https://pokeapi.co) has gone from free to \$1 per API call!
@@ -85,8 +41,8 @@ Confirm you are able to bring in the data from the `pokemon.json` file
 **app.js**
 
 ```js
-const pokemon = require("./pokemon.json");
-console.log(pokemon[0]);
+const pokemon = require('./pokemon.json')
+console.log(pokemon[0])
 ```
 
 `node app.js` - to confirm you see an object with Bulbasaur's info.
