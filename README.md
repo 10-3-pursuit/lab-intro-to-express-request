@@ -101,13 +101,17 @@ console.log(pokemon[0])
 
 ## Bonus
 
-Fork & Clone the [Lab Intro to Express Request Frontend](https://github.com/10-3-pursuit/lab-intro-to-express-request-frontend).
+### Create a Frontend to Display all of the Pokemon
 
-In your `App.jsx`...After you have set up your React environment,
+#### Setup:
 
-- use `fetch` to call all of the pokemon from your backend.
-- display the information of your choice from each pokemon object. Include each image.
+- Fork & Clone the [Lab Intro to Express Request Frontend](https://github.com/10-3-pursuit/lab-intro-to-express-request-frontend).
 
-- push to your Github
-- create a pull request
-- include this bonus frontend link with your backend link when you submit on canvas.
+- In your `App.jsx`...After you have set up your React environment,
+
+- Use `fetch` to call all of the pokemon from your backend.
+- Display the information of your choice from each pokemon object. Include each image.
+
+- Push to your Github
+- Create a pull request
+- Include this bonus frontend link with your backend link when you submit on canvas.
