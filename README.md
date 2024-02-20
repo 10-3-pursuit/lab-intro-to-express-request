@@ -107,3 +107,7 @@ In your `App.jsx`...After you have set up your React environment,
 
 - use `fetch` to call all of the pokemon from your backend.
 - display the information of your choice from each pokemon object. Include each image.
+
+- push to your Github
+- create a pull request
+- include this bonus frontend link with your backend link when you submit on canvas.
