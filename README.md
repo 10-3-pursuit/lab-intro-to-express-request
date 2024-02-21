@@ -105,6 +105,17 @@ console.log(pokemon[0])
 
 #### Setup:
 
+### Backend:
+
+- In your backend terminal, `npm i cors`
+- App.js
+
+  - Under the express import, add `const cors = require('cors')`
+  - before the `app.get` route, add `app.use(cors())`
+  - Make sure you restart your server and keep it running
+
+### Frontend:
+
 - Fork & Clone the [Lab Intro to Express Request Frontend](https://github.com/10-3-pursuit/lab-intro-to-express-request-frontend).
 
 - Setup your React environment
