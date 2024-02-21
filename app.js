@@ -28,5 +28,16 @@ app.get('/pokemon/:indexOfArray', (req, res) => {
         res.json({ message: `Sorry, no Pokémon found at /pokemon/${indexOfArray}`})
     }
 });
+
+app.get('/pokemon/search', (res, req) => {
+    const { name } = req.query;
+    const findPokemon = pokemons.find(pokemon => pokemon.name.toLowerCase());
+        
+    if (!findPokemon) {
+            return res.json({ message: `No Pokémon found with name '${name}'` });
+        } else {
+            res.json({ pokemon: findPokemon });
+        }
+});
 // EXPORT
 module.exports = app
