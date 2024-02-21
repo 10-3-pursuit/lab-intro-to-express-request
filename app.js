@@ -11,6 +11,9 @@ const app = express()
 app.use(cors());
 
 // ROUTES
+app.get('/', (req, res) => {
+    res.send('Welcome to my Pokemon World')
+})
 
   
 // EXPORT
