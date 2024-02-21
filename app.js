@@ -18,7 +18,7 @@ app.use(cors());
 
   app.get('/pokemon/search', (req, res) => {
     const { name } = req.query
-    const searchResult = pokemon.find((element) => element.name.toLowerCase() === name)
+    const searchResult = pokemon.find((element) => element.name.toLowerCase() === name.toLowerCase())
     if(searchResult){
         res.json({pokemon: searchResult})
     } else {
