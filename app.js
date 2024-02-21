@@ -28,7 +28,6 @@ app.get('/pokemon/search', (req, res) => {
 
 app.get('/pokemon/:indexOfArray', (req, res) => {
 const {indexOfArray} = req.params 
-
 if (pokemons[indexOfArray]) {
     res.json({ pokemon: pokemons[indexOfArray] });
 } else {
