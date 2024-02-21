@@ -18,6 +18,15 @@ app.get('/', (req, res) => {
 app.get('/pokemon', (req, res) => {
     res.send(pokemons)
 })
-  
+
+app.get('/pokemon/:indexOfArray', (req, res) => {
+    const { indexOfArray} = req.params
+    
+    if (pokemon[indexOfArray]) {
+        res.json({pokemon: pokeons[indexOfArray]});
+    } else {
+        res.json({ message: `Sorry, no Pokémon found at /pokemon/${indexOfArray}`})
+    }
+});
 // EXPORT
 module.exports = app
