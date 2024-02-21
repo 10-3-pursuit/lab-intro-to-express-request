@@ -1,8 +1,9 @@
 const express = require("express")
+const cors = require('cors')
 const pokemon = require('./models/pokemon.json')
 const app = express()
 
-
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send(`App Initialized`)
