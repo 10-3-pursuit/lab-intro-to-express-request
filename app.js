@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
     res.send('Welcome to my Pokemon World')
 })
 
+app.get('/pokemon', (req, res) => {
+    res.send(pokemons)
+})
   
 // EXPORT
 module.exports = app
