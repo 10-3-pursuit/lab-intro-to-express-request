@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors"); // to set up frontend later
 const pokemon = require('./models/pokemon.json')
 const app = express(); // config express
-//const fs = require('fs');
+// const fs = require('fs');
 
 app.use(cors()); // middleware to allow stuff from front end
 
@@ -23,19 +23,18 @@ app.get('/pokemon', (req, res) => {
 //static routes go above dynamic routes
 // Route to search the name only
 app.get('/pokemon/search',(req, res)=>{
-    // add functionality for queries
-    // extract name 
-    // use req.params
     // use req.query for URL conversion stuff
     const { name } = req.query; // will display on http://localhost:8888/pokemon/search?name=mewtwo
     // console.log(name)
-    res.json()
+    const selectedPoke = 
+    pokemon.find((singlePoke) => name.toLowerCase() === singlePoke.name.toLowerCase());
+    
+    selectedPoke ? res.json({ selectedPoke }) : res.json({ message: `Pokemon not Found` })
 })
 // Route for single pokemon
 app.get('/pokemon/:indexOfArr',(req, res) => { // variables NEEDDDD to match!!!
-    //iterate to get single pokemon then put inside res.json
     // use req.params
-    // or make key for index
+    // make key for index
     const { indexOfArr } = req.params
     if (pokemon[indexOfArr]) {
         res.json({ pokemon: pokemon[indexOfArr] })
