@@ -1,14 +1,30 @@
 const pokemon = require("./models/pokemon.json");
 const express = require("express");
 const app = express();
-console.log(pokemon[0]);
 
 // ROUTES
 app.get("/pokemon", (req, res) => {
   res.send(pokemon);
 });
+//pokemon by name
 
-// app.get("/pokemon/search")
+app.get("/pokemon/search", (req, res) => {
+  const searchQuery = req.query.name;
+  if (!searchQuery) {
+    return res.status(400).json({ error: "you should probably put a name" });
+  }
+  const foundPokemon = pokemon.find(
+    (poke) => poke.name.toLowerCase() === searchQuery.toLowerCase()
+  );
+
+  if (foundPokemon === undefined) {
+    return res
+      .status(404)
+      .json({ error: "Pokemon not found. Spelling error maybe?" });
+  }
+
+  res.json(foundPokemon);
+});
 
 // LISTEN
 let PORT = 8888;
