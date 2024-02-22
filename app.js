@@ -14,7 +14,9 @@ app.use(cors()); // middleware to allow stuff from front end
 //     fs.readFileSync(`./models/pokemon.json`)
 // )
 //console.log(pokemon[0])
-
+app.get('/', (req, res) => {
+    res.json({ message: 'Welcome to my Pokemon Express app'})
+})
 // Route for all pokemon
 app.get('/pokemon', (req, res) => {
     res.json(pokemon)
