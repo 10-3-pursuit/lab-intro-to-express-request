@@ -6,14 +6,6 @@ const app = express(); // config express
 
 app.use(cors()); // middleware to allow stuff from front end
 
-// --- must include middleware for POST to work
-// app.use(express.json()); // modifies data of incoming request - added to request object using this middleware
-
-//before sending the data to the client the server has to be able to read it so before doiing app.get we create a fx to read the data from dev-data folder. This code will be read right after application starts up
-// const jsonPokemon = JSON.parse( // to turn the following into a javascript object to be used in next lines of code
-//     fs.readFileSync(`./models/pokemon.json`)
-// )
-//console.log(pokemon[0])
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to my Pokemon Express app'})
 })
