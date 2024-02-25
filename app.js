@@ -9,6 +9,14 @@ app.get('/',(request, response) => {
 app.get('/pokemon', (request, response) => {
     response.json({pokemon: pokemon});
 });
+// static routes above, dynamic (changing) routes below, like `search` and `indexOfArray`
+app.get('/pokemon/search', (request, response) => {
+    const {name} = request.query; 
+    // will test the display of http://localhost:8888/pokemon/search?name=Venusaur
+    // console.log(name)
+    const choosePokemon = pokemon.find((soloPokemon) => name.toLowerCase() === soloPokemon.name.toLocaleLowerCase());
+    choosePokemon ? response.json({choosePokemon}) : response.json({message: `Pokemon not found`});
+})
 
 app.get('/pokemon/:indexOfArray', (request, response) => {
     const {indexOfArray} = request.params
