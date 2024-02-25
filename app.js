@@ -9,9 +9,19 @@ app.get('/',(request, response) => {
 app.get('/pokemon', (request, response) => {
     response.json({pokemon: pokemon});
 });
+
 app.get('/pokemon/:indexOfArray', (request, response) => {
     const {indexOfArray} = request.params
-    response.json({pokemon: pokemon[indexOfArray]})
-})
+    if (pokemon[indexOfArray]) {
+        response.json({pokemon: pokemon[indexOfArray]})
+    } else {
+        response.json({
+            message: `sorry, no pokemon found at ${indexOfArray}`
+            // http://localhost:8888/pokemon/500 which gave the exact text message in URL
+        })
+
+    }
+   
+});
 
 module.exports = app;
